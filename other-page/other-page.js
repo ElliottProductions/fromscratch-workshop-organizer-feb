@@ -7,3 +7,7 @@ const logoutButton = document.getElementById('logout');
 logoutButton.addEventListener('click', () => {
     logout();
 });
+
+window.addEventListener('load', async ()=>{
+
+});
