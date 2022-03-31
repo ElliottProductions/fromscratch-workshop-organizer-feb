@@ -8,6 +8,6 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
-window.addEventListener('load', async ()=>{
-
+window.addEventListener('load', async () => {
+    
 });
