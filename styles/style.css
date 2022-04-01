@@ -116,6 +116,12 @@ footer {
     top: 90px;
 }
 
+#create {
+    position: fixed;
+    right: 100px;
+    top: 90px;
+}
+
 .auth-main {
     display: flex;
     flex-direction: row;
@@ -148,7 +154,7 @@ footer {
     height: 360px;
     font-family: monospace;
     font-size: 20px;
-    margin: 30px;
+    margin: 10px;
     text-align: center;
     
 }
@@ -186,5 +192,28 @@ footer {
     width: 40px;
     margin:3px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.welcome {
+    color:aliceblue;
+}
+
+.create-div {
+    background-color: blue;
+    border: solid 2px white;
+    color:aliceblue;
+    width:500px;
+    height:130px;
+    font-family: monospace;
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+    
+    
+}
+
+.create-form {
+    margin:30px;
     
 }

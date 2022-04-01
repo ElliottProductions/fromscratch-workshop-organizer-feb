@@ -38,9 +38,6 @@ export async function logout() {
 }
 
 export async function getWorkshops(){
-    
-    
-    
     //const response = [{ id: '1', name: 'Mess Hall', participants: [{ id: '1', name: 'Jason', emoji: '1' }] },
         //{ id: '2', name: 'R&R', participants: [{ id: '1', name: 'Jane', emoji: '2' }, { id: '1', name: 'Jackson', emoji: '1' }] }];
     
@@ -51,6 +48,19 @@ export async function getWorkshops(){
     console.log(response.body);
 
     return response.body; //add . body
+}
+
+export async function createParticipant(name, emoji, workID){
+    await client
+        .from('participants')
+        .insert({ name: name, emoji: emoji, workshop_id: workID });
+}
+
+export async function deleteParticipant(id){
+    await client
+        .from('participants')
+        .delete()
+        .match({ id });
 }
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;

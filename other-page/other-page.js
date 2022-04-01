@@ -1,19 +1,26 @@
-import { checkAuth, logout, getWorkshops } from '../fetch-utils.js';
+import { checkAuth, logout, getWorkshops, deleteParticipant } from '../fetch-utils.js';
 
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
+const createButton = document.getElementById('create');
 const workshopsDiv = document.querySelector('.workshop-div');
 
 logoutButton.addEventListener('click', () => {
     logout();
 });
 
+createButton.addEventListener('click', () => {
+    location.replace('../create');
+});
+
+
 window.addEventListener('load', async () => {
     await displayWorkshops();
 });
 
 async function displayWorkshops(){
+    workshopsDiv.textContent = '';
     const allWorkshops = await getWorkshops(); //add await
 
     for (let shop of allWorkshops){ 
@@ -31,15 +38,16 @@ async function displayWorkshops(){
             const partName = document.createElement('p');
             const emojiEl = document.createElement('div');
 
-            if (participant.emoji === 1){
-                emojiEl.textContent = '🤵';
-            }
-            if (participant.emoji === 2){
-                emojiEl.textContent = '🧝';
-            }
-            if (participant.emoji === 3){
-                emojiEl.textContent = '👽';
-            }
+            if (participant.emoji === 1){emojiEl.textContent = '🤵';}
+            if (participant.emoji === 2){emojiEl.textContent = '🧝';}
+            if (participant.emoji === 3){emojiEl.textContent = '👽';}
+
+            partEl.addEventListener('click', async ()=> {
+                await deleteParticipant(participant.id);
+                await displayWorkshops();
+                
+                
+            });
 
 
             partName.textContent = participant.name;
