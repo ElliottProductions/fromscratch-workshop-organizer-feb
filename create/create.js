@@ -1,9 +1,8 @@
-import { checkAuth, logout, getWorkshops, createParticipant } from '../fetch-utils.js';
+import { checkAuth, getWorkshops, createParticipant } from '../fetch-utils.js';
 
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
-const createDiv = document.querySelector('.create-div');
 const workshopDropdown = document.querySelector('.workshop-dropdown');
 const emojidropDown = document.querySelector('.emoji-menu');
 const form = document.querySelector('.create-form');
