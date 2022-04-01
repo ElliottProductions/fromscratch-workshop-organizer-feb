@@ -15,7 +15,7 @@ body {
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
+    
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
@@ -27,7 +27,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: calc(var(--footer-height));
+    
+    background-image: url("../assets/shipbackground.png");
+   
+    width: 1600px;
+    height: 700px;
+    
 }
 
 section {
@@ -128,4 +133,58 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+.workshop-div {
+    
+    display: flex;
+    flex-direction: row;
+}
+.shopel {
+    background-color: blue;
+    border: solid 2px white;
+    color:aliceblue;
+    width: 150px;
+    height: 360px;
+    font-family: monospace;
+    font-size: 20px;
+    margin: 30px;
+    text-align: center;
+    
+}
+
+.shopel > p {
+    
+    padding: 20px;
+    
+}
+
+.crew-card {
+    border-radius: 3px;
+    width: 65px;
+    height: 40px;
+    background-color: aliceblue;
+    
+    color:black;
+    
+    display:flex;
+    flex-direction: row;
+    margin: 30px;
+    box-shadow: 5px -2px 15px 0px rgba(0,0,0,0.61);
+}
+
+.crew-card > div {
+    font-size: 14px;
+    margin:5px;
+    height: 20px;
+    width: 30px;
+    background-color: rgb(138, 152, 197);
+}
+
+.crew-card > p {
+    font-size: 10px;
+    width: 40px;
+    margin:3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }

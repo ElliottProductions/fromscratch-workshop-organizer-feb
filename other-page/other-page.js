@@ -14,15 +14,42 @@ window.addEventListener('load', async () => {
 });
 
 async function displayWorkshops(){
-    const allWorkshops = await getWorkshops();
+    const allWorkshops = await getWorkshops(); //add await
 
-    for (let shop of allWorkshops){
+    for (let shop of allWorkshops){ 
         const shopEl = document.createElement('div');
+        shopEl.classList.add('shopel');
         const shopLabel = document.createElement('p');
+        const participantDiv = document.createElement('div');
         
-        shopLabel.textContent = shop.name;
-
+        shopLabel.textContent = shop.workshop;
         shopEl.append(shopLabel);
+
+        for (let participant of shop.participants){
+            const partEl = document.createElement('div');
+            partEl.classList.add('crew-card');
+            const partName = document.createElement('p');
+            const emojiEl = document.createElement('div');
+
+            if (participant.emoji === 1){
+                emojiEl.textContent = '🤵';
+            }
+            if (participant.emoji === 2){
+                emojiEl.textContent = '🧝';
+            }
+            if (participant.emoji === 3){
+                emojiEl.textContent = '👽';
+            }
+
+
+            partName.textContent = participant.name;
+
+            partEl.append(partName, emojiEl);
+            shopEl.append(partEl);
+
+        }
+
+        shopEl.append(participantDiv);
         workshopsDiv.append(shopEl);
 
     }
