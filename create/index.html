@@ -14,17 +14,32 @@
 </head>
 
 <body>
-    <button id="create">Create Passenger</button>
-    <button id="logout">Logout</button>
     
+    <button id="logout">Return</button>
     <main>
-        <h1 class="welcome">Welcome Aboard!</h1>
-        <div class="workshop-div"></div>
+        <h1 class="welcome">Create a Passenger</h1>
+        <div class="create-div">
+            <form class="create-form">
+                <input name="name">
+                <select class="workshop-dropdown">
+
+                </select>
+                <select class="emoji-menu">
+                    <option value="1">🤵</option>
+                    <option value="2">🧝</option>
+                    <option value="3">👽</option>
+                </select>
+                <button class="create-passenger">
+                    Create Passenger
+                </button>
+                
+            </form>
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./create.js"></script>
 </body>
 
 </html>
